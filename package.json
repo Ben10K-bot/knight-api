@@ -1,5 +1,5 @@
 {
-  "name": "𝓴𝓷𝓲𝓰𝓱𝓽-𝓪𝓹𝓲",
+  "name": "knight-api",
   "version": "1.0.0",
   "type": "module",
   "main": "server.js",
