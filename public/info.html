@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝓴𝓷𝓲𝓰𝓱𝓽 𝓪𝓹𝓲|𝓢𝓮𝓻𝓿𝓮𝓻 𝓘𝓷𝓯𝓸</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style2.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/189/189664.png">
+</head>
+<body class="light-theme">
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo-section">
+                <img style="border-radius: 50%;" src="https://i.pinimg.com/736x/0f/64/c4/0f64c496bfe152da4aa7947179109195.jpg" alt="𝓴𝓷𝓲𝓰𝓱𝓽 𝓪𝓹𝓲" class="logo">
+                <div>
+                    <h1>𝓴𝓷𝓲𝓰𝓱𝓽 𝓪𝓹𝓲</h1>
+                    <p>Server Status</p>
+                </div>
+            </div>
+            <button class="btn btn-outline" onclick="location.href='/home'">
+                <i data-lucide="arrow-left"></i> Back
+            </button>
+        </div>
+    </header>
+
+    <main class="container py-12">
+        <div class="max-w-4xl mx-auto space-y-8">
+            <div class="section-header">
+                <h2>Server Information</h2>
+                <p>Real-time status and statistics of the 𝓴𝓷𝓲𝓰𝓱𝓽 𝓪𝓹𝓲 platform.</p>
+            </div>
+
+            <div class="api-grid">
+                <div class="api-card">
+                    <div class="api-card-header">
+                        <div class="api-card-title">
+                            <h3>System Status</h3>
+                        </div>
+                        <span class="badge badge-accent" id="serverStatus">Loading...</span>
+                    </div>
+                    <div class="api-card-body">
+                        <div class="info-row">
+                            <span>Uptime:</span>
+                            <span id="serverUptime" class="font-mono">--</span>
+                        </div>
+                        <div class="info-row">
+                            <span>Platform:</span>
+                            <span id="serverPlatform" class="font-mono">--</span>
+                        </div>
+                        <div class="info-row">
+                            <span>Node Version:</span>
+                            <span id="serverNode" class="font-mono">--</span>
+                        </div>
+                        <div class="info-row">
+                            <span>CPU Usage:</span>
+                            <span id="cpuUsage" class="font-mono">--</span>
+                        </div>
+                        <div class="info-row">
+                            <span>RAM Usage:</span>
+                            <span id="ramUsage" class="font-mono">--</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-card">
+                    <div class="api-card-header">
+                        <div class="api-card-title">
+                            <h3>API Statistics</h3>
+                        </div>
+                        <i data-lucide="bar-chart-2" class="text-accent"></i>
+                    </div>
+                    <div class="api-card-body">
+                        <div class="info-row">
+                            <span>Total Categories:</span>
+                            <span id="totalCategories" class="font-mono">--</span>
+                        </div>
+                        <div class="info-row">
+                            <span>Total Endpoints:</span>
+                            <span id="totalApis" class="font-mono">--</span>
+                        </div>
+                        <div class="info-row">
+                            <span>Author:</span>
+                            <span id="serverAuthor" class="font-mono">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="api-card">
+                <div class="api-card-header">
+                    <div class="api-card-title">
+                        <h3>Memory Usage</h3>
+                    </div>
+                    <i data-lucide="database" class="text-accent"></i>
+                </div>
+                <div class="api-card-body">
+                    <div id="memoryStats" class="space-y-2"></div>
+                </div>
+            </div>
+
+            <div class="api-card">
+                <div class="api-card-header">
+                    <div class="api-card-title">
+                        <h3>Operating System Information</h3>
+                    </div>
+                    <i data-lucide="cpu" class="text-accent"></i>
+                </div>
+                <div class="api-card-body">
+                    <div id="osStats" class="space-y-2"></div>
+                </div>
+            </div>
+
+            <div class="api-grid">
+                <div class="api-card">
+                    <div class="api-card-header">
+                        <div class="api-card-title">
+                            <h3>CPU Information</h3>
+                        </div>
+                        <i data-lucide="zap" class="text-accent"></i>
+                    </div>
+                    <div class="api-card-body">
+                        <div id="cpuStats" class="space-y-2"></div>
+                    </div>
+                </div>
+
+                <div class="api-card">
+                    <div class="api-card-header">
+                        <div class="api-card-title">
+                            <h3>Network Information</h3>
+                        </div>
+                        <i data-lucide="network" class="text-accent"></i>
+                    </div>
+                    <div class="api-card-body">
+                        <div id="networkStats" class="space-y-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 𝓴𝓷𝓲𝓰𝓱𝓽 𝓪𝓹𝓲. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .info-row:last-child {
+            border-bottom: none;
+        }
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+        }
+    </style>
+
+    <script>
+        lucide.createIcons();
+        
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.replace('light-theme', 'dark-theme');
+        }
+
+        function formatUptime(seconds) {
+            const d = Math.floor(seconds / (3600*24));
+            const h = Math.floor(seconds % (3600*24) / 3600);
+            const m = Math.floor(seconds % 3600 / 60);
+            const s = Math.floor(seconds % 60);
+            return `${d}d ${h}h ${m}m ${s}s`;
+        }
+
+        function formatBytes(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        async function fetchServerInfo() {
+            try {
+                const response = await axios.get('/api/server-info');
+                const data = response.data;
+
+                document.getElementById('serverStatus').textContent = data.status;
+                document.getElementById('serverUptime').textContent = formatUptime(data.uptime);
+                document.getElementById('serverPlatform').textContent = data.platform;
+                document.getElementById('serverNode').textContent = data.nodeVersion;
+                document.getElementById('cpuUsage').textContent = 
+                    typeof data.cpuUsagePercent === 'number' ? data.cpuUsagePercent + '%' : 'N/A';
+                document.getElementById('ramUsage').textContent = 
+                    typeof data.memoryUsagePercent === 'number' ? data.memoryUsagePercent + '%' : 'N/A';
+                document.getElementById('totalCategories').textContent = data.categoriesCount;
+                document.getElementById('totalApis').textContent = data.totalApis;
+                document.getElementById('serverAuthor').textContent = data.author;
+
+                const memoryHtml = Object.entries(data.memoryUsage).map(([key, value]) => `
+                    <div class="info-row">
+                        <span>${key}:</span>
+                        <span class="font-mono">${formatBytes(value)}</span>
+                    </div>
+                `).join('');
+                document.getElementById('memoryStats').innerHTML = memoryHtml;
+
+                const osHtml = `
+                    <div class="info-row">
+                        <span>OS Release:</span>
+                        <span class="font-mono">${data.osRelease || 'N/A'}</span>
+                    </div>
+                    <div class="info-row">
+                        <span>Architecture:</span>
+                        <span class="font-mono">${data.arch || 'N/A'}</span>
+                    </div>
+                    <div class="info-row">
+                        <span>CPU Count:</span>
+                        <span class="font-mono">${data.cpuCount || 'N/A'}</span>
+                    </div>
+                    <div class="info-row">
+                        <span>CPU Model:</span>
+                        <span class="font-mono">${data.cpuModel || 'N/A'}</span>
+                    </div>
+                `;
+                document.getElementById('osStats').innerHTML = osHtml;
+
+                const cpuHtml = `
+                    <div class="info-row">
+                        <span>CPU Count:</span>
+                        <span class="font-mono">${data.cpuCount || 'N/A'}</span>
+                    </div>
+                    <div class="info-row">
+                        <span>CPU Model:</span>
+                        <span class="font-mono">${data.cpuModel || 'N/A'}</span>
+                    </div>
+                    <div class="info-row">
+                        <span>Load Average (1m):</span>
+                        <span class="font-mono">${data.loadAverage && data.loadAverage[0] ? data.loadAverage[0].toFixed(2) : 'N/A'}</span>
+                    </div>
+                    <div class="info-row">
+                        <span>Load Average (5m):</span>
+                        <span class="font-mono">${data.loadAverage && data.loadAverage[1] ? data.loadAverage[1].toFixed(2) : 'N/A'}</span>
+                    </div>
+                    <div class="info-row">
+                        <span>Load Average (15m):</span>
+                        <span class="font-mono">${data.loadAverage && data.loadAverage[2] ? data.loadAverage[2].toFixed(2) : 'N/A'}</span>
+                    </div>
+                `;
+                document.getElementById('cpuStats').innerHTML = cpuHtml;
+
+                const networkHtml = `
+                    <div class="info-row">
+                        <span>Platform:</span>
+                        <span class="font-mono">${data.platform || 'N/A'}</span>
+                    </div>
+                    <div class="info-row">
+                        <span>Architecture:</span>
+                        <span class="font-mono">${data.arch || 'N/A'}</span>
+                    </div>
+                    <div class="info-row">
+                        <span>OS Release:</span>
+                        <span class="font-mono">${data.osRelease || 'N/A'}</span>
+                    </div>
+                    <div class="info-row">
+                        <span>Node.js Version:</span>
+                        <span class="font-mono">${data.nodeVersion || 'N/A'}</span>
+                    </div>
+                `;
+                document.getElementById('networkStats').innerHTML = networkHtml;
+
+            } catch (error) {
+                console.error('Error fetching server info:', error);
+                document.getElementById('serverStatus').textContent = 'Error';
+                document.getElementById('serverStatus').classList.replace('badge-accent', 'badge-error');
+            }
+        }
+
+        fetchServerInfo();
+        setInterval(fetchServerInfo, 5000);
+    </script>
+    <script src="/js/cursor.js"></script>
+</body>
+</html>

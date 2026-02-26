@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>403 - Forbidden</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" href="https://uxwing.com/wp-content/themes/uxwing/download/signs-and-symbols/error-icon.png">
+</head>
+<body class="light-theme">
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo-section">
+                <img style="border-radius: 50%;" src="https://i.pinimg.com/736x/0f/64/c4/0f64c496bfe152da4aa7947179109195.jpg" alt="𝓴𝓷𝓲𝓰𝓱𝓽 𝓪𝓹𝓲" class="logo">
+                <div>
+                    <h1>𝓴𝓷𝓲𝓰𝓱𝓽 𝓪𝓹𝓲</h1>
+                    <p>Error Page</p>
+                </div>
+            </div>
+            <button class="btn btn-outline" onclick="location.href='/home'">
+                <i data-lucide="arrow-left"></i> Back Home
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="error-container">
+            <div class="error-code">403</div>
+            <div class="error-message">Access Forbidden</div>
+            <div class="error-description">
+                You don't have permission to access this resource. If you believe this is an error, 
+                please contact the administrator.
+            </div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                <button class="btn btn-primary" onclick="location.href='/home'">
+                    <i data-lucide="home"></i> Go Home
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 𝓴𝓷𝓲𝓰𝓱𝓽 𝓪𝓹𝓲. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.replace('light-theme', 'dark-theme');
+        }
+    </script>
+    <script src="/js/cursor.js"></script>
+</body>
+</html>

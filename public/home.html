@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝓴𝓷𝓲𝓰𝓱𝓽 𝓪𝓹𝓲|𝓗𝓸𝓶𝓮 𝓟𝓪𝓰𝓮</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1289/1289447.png">
+</head>
+<body class="light-theme">
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo-section">
+                <img style="border-radius: 50%;" src="https://i.pinimg.com/736x/0f/64/c4/0f64c496bfe152da4aa7947179109195.jpg" alt="𝓴𝓷𝓲𝓰𝓱𝓽 𝓪𝓹𝓲" class="logo">
+                <div>
+                    <h1>𝓴𝓷𝓲𝓰𝓱𝓽 𝓪𝓹𝓲</h1>
+                    <p>Best Developer's API</p>
+                </div>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i data-lucide="menu"></i>
+            </button>
+            <nav class="nav-actions" id="navActions">
+                <div class="dropdown">
+                    <button class="btn btn-outline" id="categoryBtn">
+                        <i data-lucide="menu"></i> Categories
+                    </button>
+                    <div class="dropdown-content" id="categoryList">
+                    </div>
+                </div>
+                <button class="btn btn-outline" onclick="location.href='/info'">
+                    <i data-lucide="info"></i> Info
+                </button>
+                <button class="btn btn-outline" onclick="location.href='https://codejshub.site'">
+                    <i data-lucide="user"></i> Owner
+                </button>
+                <button class="theme-toggle" id="themeToggle">
+                    <i data-lucide="moon" id="themeIcon"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <h2>Powerful APIs for Developers</h2>
+                    <p>Access a powerful, all-in-one suite of AI, media, and utility APIs—designed for lightning-fast performance, seamless integration, and 24/7 reliability.</p>
+                    <div class="badges">
+                        <span class="badge"><i data-lucide="zap"></i> Fast Response</span>
+                        <span class="badge"><i data-lucide="code-2"></i> Easy Integration</span>
+                        <span class="badge"><i data-lucide="layers"></i> Multiple Categories</span>
+                    </div>
+                    <div class="hero-btns">
+                        <button class="btn btn-primary" onclick="document.getElementById('api-section').scrollIntoView({behavior:'smooth'})">Get Started</button>
+                        <button class="btn btn-outline" onclick="location.href='/privacy-policy'">Privacy & Policy</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://i.pinimg.com/736x/7d/37/5f/7d375fbca16184e70d4c44b9cb0c2a09.jpg" alt="API Dashboard">
+                </div>
+            </div>
+        </section>
+
+        <section class="search-section">
+            <div class="container">
+                <div class="search-container">
+                    <label>Search APIs</label>
+                    <div class="search-input-wrapper">
+                        <i data-lucide="search"></i>
+                        <input type="text" id="searchInput" placeholder="Search by API name or endpoint...">
+                    </div>
+                </div>
+                <div class="current-category">
+                    <span>Current Category</span>
+                    <span class="badge badge-accent" id="activeCategoryName">Loading...</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="api-section" id="api-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="categoryTitle">APIs</h2>
+                    <p id="categoryDesc">Select a category to view APIs</p>
+                </div>
+                <div class="api-grid" id="apiGrid">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 𝓴𝓷𝓲𝓰𝓱𝓽 𝓪𝓹𝓲. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/cursor.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
