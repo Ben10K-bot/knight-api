@@ -1,5 +1,6 @@
 import express from "express";
 import { spawn } from "child_process";
+import { config } from "../../config.js"
 
 const router = express.Router();
 
