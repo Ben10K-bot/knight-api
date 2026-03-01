@@ -1,6 +1,7 @@
 import express from 'express';
 import { createCanvas, loadImage } from 'canvas';
 import fetch from 'node-fetch';
+import { config } from '../../config.js'
 
 const CANVAS_WIDTH = 800;
 const CANVAS_HEIGHT = 520;
