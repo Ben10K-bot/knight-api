@@ -5,7 +5,7 @@ import { config } from '../../config.js';
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  const { book, author} = req.query;
+  const { book, author, page = 1, limit = 10} = req.query;
 
   if (!book && !author) {
     return res.status(400).json({
