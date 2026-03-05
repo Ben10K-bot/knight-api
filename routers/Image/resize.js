@@ -1,5 +1,6 @@
 import express from 'express';
 import sharp from 'sharp';
+import { config } from 'config';
 import { loadImageFromUrl } from '../../server.js';
 
 const router = express.Router();
