@@ -305,7 +305,7 @@ app.post("/get-key", (req, res) => {
     );
   }
 
-  const key = "SondosElsharmota125KnightApi";
+  const key = decrypt("00000000000000000000000000000000:2ea7ac229dfd98da616e0547a66105111853b712051a3e62e52414d825f6a2e6");
 
   return res.json({
     success: true,
